@@ -22,7 +22,7 @@ const Signup = () => {
   const submitFunction = async (event) => {
     event.preventDefault();
     await addUserService(userData)  
-    console.log(userData);
+    // console.log(userData);
   };
   return (
     <>

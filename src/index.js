@@ -9,7 +9,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+  // all routing is done in index.js file
     <BrowserRouter>
     <Routes>
     <Route exact path='/' element={< App />}></Route>  
