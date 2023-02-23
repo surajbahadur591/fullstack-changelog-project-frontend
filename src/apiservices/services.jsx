@@ -21,7 +21,7 @@ export const addUserService = async (data) => {
 //sign in service : a json data with username is required by this function
 export const signInService = async (data) => {
   try {
-    // console.log("signinservice");
+    // console.log("signinservice");s
     return await axios.post(`${URL}/signin`, data);
   } catch (err) {
     console.log("error calling signinservice", err);
