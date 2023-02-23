@@ -14,3 +14,14 @@ export const addUserService = async (data) => {
     console.log("Error while calling addUser API", error);
   }
 };
+
+export const signInService = async (data) => {
+    try{
+        console.log('signinservice')
+        return await axios.post(`${URL}/signin`, data);
+
+    }
+    catch (err){
+        console.log('error calling signinservice', err)
+    }
+}
