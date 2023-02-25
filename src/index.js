@@ -5,9 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Hero from "./components/Hero";
+
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
+import Dashboard from "./components/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <Route exact path="/" element={<App />}></Route>
       <Route exact path="/signin" element={<Signin />}></Route>
       <Route exact path="/signup" element={<Signup />}></Route>
+      <Route exact path="/dashboard" element={<Dashboard />}></Route>
     </Routes>
   </BrowserRouter>
 );

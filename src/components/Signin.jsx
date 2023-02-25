@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { signInService } from "../apiservices/services";
-
+import AccessImage from '../asset/authentication.svg'
 const Signin = () => {
+
+
   //default userdate with empty value
   const defaultUser = {
     username: "",
@@ -11,17 +13,24 @@ const Signin = () => {
   // user state
   const [userData, setUserData] = useState(defaultUser);
 
+  // user token 
+const [usertoken, setUserToken] = useState('')
   //  function used to set the value of form to userData
   const changeHandler = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
   // when button clicked it calls addUserService of backend api
   const submitFunction = async (event) => {
     event.preventDefault();
-    await signInService(userData);
-    // console.log(userData);
+    const response = await signInService(userData);
+    console.log(response)
+    localStorage.setItem("jwtToken",response.data.token)
+    setUserToken(response.data.token);
+    
+
+    
   };
 
   return (
@@ -30,10 +39,11 @@ const Signin = () => {
       <div className="md:flex bg-[#060B27] h-full">
         {/* element 1 : image  */}
         {/* this will be hidden in mobile screen  */}
-        <div className=" hidden md:block w-[50%] text-white bg-black ">
-          <div className="mx-auto">
+        <div className=" hidden md:block mx-auto my-auto w-[50%] text-white bg-[#060B27] ">
+          <div className="mx-auto text-lg">
             Welcome Back, Thank you for staying in touch
           </div>
+          <img src={AccessImage} alt="" width="400px" />
         </div>
 
         {/* element 2 : form  */}
@@ -64,7 +74,7 @@ const Signin = () => {
               Sign in
             </button>
             <h1 className="text-white text-lg ">
-              Don't have an account??{" "}
+              Don't have an account? {" "}
               <a className="underline" href="/signup">
                 Sign up
               </a>{" "}

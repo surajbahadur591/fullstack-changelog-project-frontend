@@ -27,3 +27,13 @@ export const signInService = async (data) => {
     console.log("error calling signinservice", err);
   }
 };
+
+export const allProductsService = async (data) => {
+  try {
+
+    return await axios.get(`${URL}/api/products`, data);
+
+  } catch(err) {
+    console.log("error calling allProductsService", err);
+  }
+}

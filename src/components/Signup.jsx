@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import TopLogo from "../asset/icons8.png";
 import {addUserService} from '../apiservices/services'
+
+import Autenticated from '../asset/access_account.svg'
+
 const Signup = () => {
 
   //default userdate with empty value
@@ -30,15 +33,16 @@ const Signup = () => {
       <div className="md:flex bg-[#060B27] h-full">
         {/* element 1 : image  */}
         {/* this will be hidden in mobile screen  */}
-        <div className=" hidden md:block w-[50%] text-white bg-black ">
-          <div className="mx-auto">MERN APP : Built for Learning</div>
+        <div className=" hidden md:block w-[50%] mx-auto my-auto text-white bg-[#060B27] ">
+          
+          <img src={Autenticated} alt="" width="500px"/>
         </div>
 
         {/* element 2 : form  */}
         <div className="bg-[#060B27] max-w-[50%] items-center justify-center  h-full mx-auto py-32">
-          <img src={TopLogo} alt="" />
+          {/* <img src={TopLogo} alt="" /> */}
           <h1 className="text-white text-3xl font-bold">
-            {" "}
+            
             Create your account
           </h1>
           <h1 className="text-white text-lg ">
