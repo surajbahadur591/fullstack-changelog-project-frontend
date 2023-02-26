@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import TopLogo from "../asset/icons8.png";
-import {addUserService} from '../apiservices/services'
+import { addUserService } from "../apiservices/services";
 
-import Autenticated from '../asset/access_account.svg'
+import Autenticated from "../asset/access_account.svg";
 
 const Signup = () => {
-
   //default userdate with empty value
   const defaultUser = {
     username: "",
@@ -13,18 +12,18 @@ const Signup = () => {
     password: "",
   };
 
-  // user state 
+  // user state
   const [userData, setUserData] = useState(defaultUser);
 
-  //  function used to set the value of form to userData 
+  //  function used to set the value of form to userData
   const changeHandler = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
-  // when button clicked it calls addUserService of backend api 
+  // when button clicked it calls addUserService of backend api
   const submitFunction = async (event) => {
     event.preventDefault();
-    await addUserService(userData)  
+    await addUserService(userData);
     // console.log(userData);
   };
   return (
@@ -34,17 +33,13 @@ const Signup = () => {
         {/* element 1 : image  */}
         {/* this will be hidden in mobile screen  */}
         <div className=" hidden md:block w-[50%] mx-auto my-auto text-white bg-[#060B27] ">
-          
-          <img src={Autenticated} alt="" width="500px"/>
+          <img src={Autenticated} alt="" width="500px" />
         </div>
 
         {/* element 2 : form  */}
         <div className="bg-[#060B27] max-w-[50%] items-center justify-center  h-full mx-auto py-32">
           {/* <img src={TopLogo} alt="" /> */}
-          <h1 className="text-white text-3xl font-bold">
-            
-            Create your account
-          </h1>
+          <h1 className="text-white text-3xl font-bold">Create your account</h1>
           <h1 className="text-white text-lg ">
             Already registered?{" "}
             <a className="underline" href="/signin">

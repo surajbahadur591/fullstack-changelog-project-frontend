@@ -1,5 +1,6 @@
 import React from "react";
 
+// this  is app landing page
 const Hero = () => {
   return (
     <div>

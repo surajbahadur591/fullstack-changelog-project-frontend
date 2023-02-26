@@ -29,8 +29,6 @@ const [usertoken, setUserToken] = useState('')
     localStorage.setItem("jwtToken",response.data.token)
     setUserToken(response.data.token);
     
-
-    
   };
 
   return (

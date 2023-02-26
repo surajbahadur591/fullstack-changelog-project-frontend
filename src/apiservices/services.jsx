@@ -8,10 +8,8 @@ const URL = "http://localhost:3001";
 
 // sign up service : a json data is required by this function to create user
 // - name , username and password field is mandatory
-
 export const addUserService = async (data) => {
   try {
-    // console.log("adduserservice");
     return await axios.post(`${URL}/user`, data);
   } catch (error) {
     console.log("Error while calling addUser API", error);
@@ -21,34 +19,30 @@ export const addUserService = async (data) => {
 //sign in service : a json data with username is required by this function
 export const signInService = async (data) => {
   try {
-    // console.log("signinservice");s
     return await axios.post(`${URL}/signin`, data);
   } catch (err) {
     console.log("error calling signinservice", err);
   }
 };
 
-export const allProductsService = async (data) => {
+// function to get all product data of  signed in user, bearer token is required and it is set in headers
+export const allProductsService = async (token) => {
   try {
-    
     return await axios.get(`${URL}/api/products`, {
-      headers: { Authorization: `bearer ${data}` },
+      headers: { Authorization: `bearer ${token}` },
     });
   } catch (err) {
     console.log("error calling allProductsService", err);
   }
 };
 
-
-export const createProductService = async(data,token)=> {
-
+// function to  create a product, this function  required data of product and a token
+export const createProductService = async (data, token) => {
   try {
-    return await axios.post(`${URL}/api/product`, data , {
+    return await axios.post(`${URL}/api/product`, data, {
       headers: { Authorization: `bearer ${token}` },
     });
-    
-  }catch (err) {
+  } catch (err) {
     console.log("error calling createProductService", err);
   }
-
-}
+};
