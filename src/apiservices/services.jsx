@@ -30,10 +30,25 @@ export const signInService = async (data) => {
 
 export const allProductsService = async (data) => {
   try {
-
-    return await axios.get(`${URL}/api/products`, data);
-
-  } catch(err) {
+    
+    return await axios.get(`${URL}/api/products`, {
+      headers: { Authorization: `bearer ${data}` },
+    });
+  } catch (err) {
     console.log("error calling allProductsService", err);
   }
+};
+
+
+export const createProductService = async(data,token)=> {
+
+  try {
+    return await axios.post(`${URL}/api/product`, data , {
+      headers: { Authorization: `bearer ${token}` },
+    });
+    
+  }catch (err) {
+    console.log("error calling createProductService", err);
+  }
+
 }
