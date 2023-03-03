@@ -6,15 +6,15 @@ const Navbar = () => {
     <div className="bg-[#090D2B]">
       <div className="max-w-[1240] items-center md:mx-[300px] px-4 justify-between  flex h-[50px] bg-[#090D2B] text-white">
         <h1>
-          <a href="/">Changelog</a>{" "}
+          <a href="/">Changelog App</a>{" "}
         </h1>
         <ul className="flex px-8">
-          <Link to="/signup">
-            <li className="px-8">Sign up</li>
+          <Link target="_blank" to="https://github.com/surajbahadur591/fullstack-changelog-project-frontend">
+            <li className="px-8">Github</li>
           </Link>
-          <Link to="/signin">
+          <Link target="_blank" to="https://github.com/surajbahadur591/fullstack-changelog-project-backend">
             {" "}
-            <li className="px-8">Sign in</li>
+            <li className="px-8">Documentation</li>
           </Link>
         </ul>
       </div>

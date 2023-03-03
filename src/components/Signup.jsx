@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import TopLogo from "../asset/icons8.png";
 import { addUserService } from "../apiservices/services";
-
 import Autenticated from "../asset/access_account.svg";
-
+import { NavLink } from "react-router-dom";
 const Signup = () => {
   //default userdate with empty value
   const defaultUser = {
@@ -25,9 +24,12 @@ const Signup = () => {
     event.preventDefault();
     await addUserService(userData);
     // console.log(userData);
+    
+    
   };
   return (
     <>
+    
       {/* flex for two element , for side by side look */}
       <div className="md:flex bg-[#060B27] h-full">
         {/* element 1 : image  */}
@@ -42,9 +44,9 @@ const Signup = () => {
           <h1 className="text-white text-3xl font-bold">Create your account</h1>
           <h1 className="text-white text-lg ">
             Already registered?{" "}
-            <a className="underline" href="/signin">
-              Sign in
-            </a>{" "}
+            
+
+            <NavLink className="underline" to='/signin'>Sign in</NavLink>
           </h1>
           <form className=" max-w-[500px]  mx-auto bg-[#060B27] py-20 px- 20">
             <input

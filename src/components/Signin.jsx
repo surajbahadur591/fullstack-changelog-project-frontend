@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate} from "react-router-dom";
 import { signInService } from "../apiservices/services";
 import AccessImage from '../asset/authentication.svg'
+
 const Signin = () => {
 
+  const history = useNavigate();
 
   //default userdate with empty value
   const defaultUser = {
@@ -28,11 +31,12 @@ const [usertoken, setUserToken] = useState('')
     console.log(response)
     localStorage.setItem("jwtToken",response.data.token)
     setUserToken(response.data.token);
-    
+    history("/dashboard")
   };
 
   return (
     <>
+    {/* <Navbar/> */}
       {/* flex for two element , for side by side look */}
       <div className="md:flex bg-[#060B27] h-full">
         {/* element 1 : image  */}
@@ -73,9 +77,8 @@ const [usertoken, setUserToken] = useState('')
             </button>
             <h1 className="text-white text-lg ">
               Don't have an account? {" "}
-              <a className="underline" href="/signup">
-                Sign up
-              </a>{" "}
+              <NavLink className="underline" to='/'>Sign up</NavLink>
+          
             </h1>
           </form>
         </div>

@@ -46,3 +46,15 @@ export const createProductService = async (data, token) => {
     console.log("error calling createProductService", err);
   }
 };
+
+export const deleteProductService = async(id, token) => {
+  
+    try {
+      return await axios.delete(`${URL}/api/product/${id}`, {
+        headers: { Authorization: `bearer ${token}` },
+      });
+  }
+  catch(err){
+    console.log("error calling deleteProductService", err);
+  }
+}
