@@ -13,6 +13,8 @@ const Signin = () => {
     password: "",
   };
 
+  const [msg, setMsg] = useState('')
+
   // user state
   const [userData, setUserData] = useState(defaultUser);
 
@@ -28,10 +30,18 @@ const [usertoken, setUserToken] = useState('')
   const submitFunction = async (event) => {
     event.preventDefault();
     const response = await signInService(userData);
-    console.log(response)
-    localStorage.setItem("jwtToken",response.data.token)
-    setUserToken(response.data.token);
-    history("/dashboard")
+  
+    if(response &&  response.data.token) {
+      localStorage.setItem("jwtToken",response.data.token)
+      setMsg('User login success')
+      history("/dashboard")
+    }
+    else {
+      setMsg('No user exists')
+    }
+    
+    // setUserToken(response.data.token);
+    
   };
 
   return (
@@ -81,6 +91,7 @@ const [usertoken, setUserToken] = useState('')
           
             </h1>
           </form>
+          <div className="text-white font-semibold">{msg}</div>
         </div>
       </div>
     </>

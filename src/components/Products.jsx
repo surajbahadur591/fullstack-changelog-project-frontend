@@ -25,17 +25,19 @@ const Products = () => {
   const createProduct = async () => {
     const userToken = localStorage.getItem("jwtToken");
     const createdproduct = await createProductService(productName, userToken);
-    console.log(createdproduct);
+    // console.log(createdproduct);
     // calling getProduct to refresh data after a new product is created
     getProduct();
   };
 
   const deleteProduct = async(e) => {
     const userToken = localStorage.getItem("jwtToken");
-    console.log(e.target.id)
+    // console.log(e.target.id)
     const deletedProduct = await deleteProductService(e.target.id,userToken)
-    console.log(deletedProduct)
+    // console.log(deletedProduct)
+    alert('product deleted ')
     getProduct();
+    
 
   }
 
@@ -68,7 +70,7 @@ const Products = () => {
             Create Product
           </button>
             <br />
-          {productDetails.length === 0 ? "No Products" : "Changelog App"}
+          {productDetails.length === 0 ? "No Products" : ""}
         </div>
         {productDetails &&
           productDetails.map((product) => (

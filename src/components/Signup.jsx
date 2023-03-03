@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TopLogo from "../asset/icons8.png";
 import { addUserService } from "../apiservices/services";
 import Autenticated from "../asset/access_account.svg";
@@ -11,6 +11,8 @@ const Signup = () => {
     password: "",
   };
 
+  const [msg, setMsg] = useState('')
+
   // user state
   const [userData, setUserData] = useState(defaultUser);
 
@@ -22,13 +24,24 @@ const Signup = () => {
   // when button clicked it calls addUserService of backend api
   const submitFunction = async (event) => {
     event.preventDefault();
-    await addUserService(userData);
-    // console.log(userData);
+    const res = await addUserService(userData);
     
+    if(res && res.status === 200){
+setMsg('user created successfully!, You can login now')
+    }
+    else{
+      setMsg('Cannot create user!!!')
+    }
     
   };
+
+  useEffect(()=>{
+
+  }, [msg])
+  
   return (
     <>
+
     
       {/* flex for two element , for side by side look */}
       <div className="md:flex bg-[#060B27] h-full">
@@ -41,6 +54,7 @@ const Signup = () => {
         {/* element 2 : form  */}
         <div className="bg-[#060B27] max-w-[50%] items-center justify-center  h-full mx-auto py-32">
           {/* <img src={TopLogo} alt="" /> */}
+          
           <h1 className="text-white text-3xl font-bold">Create your account</h1>
           <h1 className="text-white text-lg ">
             Already registered?{" "}
@@ -54,7 +68,9 @@ const Signup = () => {
               type="text"
               placeholder="username"
               name="username"
+              
               onChange={(e) => changeHandler(e)}
+              required
             />
 
             <input
@@ -81,7 +97,9 @@ const Signup = () => {
             >
               Create Account
             </button>
+            <div className="text-white font-semibold">{msg}</div>
           </form>
+          
         </div>
       </div>
     </>
