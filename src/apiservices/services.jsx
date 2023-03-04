@@ -4,9 +4,9 @@ import axios from "axios";
 // Component will call the api of backend from here
 
 // backend URL
-// const URL = "https://project-changelog-backend.onrender.com";
+const URL = "https://project-changelog-backend.onrender.com";
 
-const URL = "http://localhost:3001";
+// const URL = "http://localhost:3001";
 
 // sign up service : a json data is required by this function to create user
 // - name , username and password field is mandatory
