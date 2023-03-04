@@ -4,7 +4,9 @@ import axios from "axios";
 // Component will call the api of backend from here
 
 // backend URL
-const URL = "https://project-changelog-backend.onrender.com";
+// const URL = "https://project-changelog-backend.onrender.com";
+
+const URL = "http://localhost:3001";
 
 // sign up service : a json data is required by this function to create user
 // - name , username and password field is mandatory
@@ -57,4 +59,38 @@ export const deleteProductService = async(id, token) => {
   catch(err){
     console.log("error calling deleteProductService", err);
   }
+}
+
+
+export const addUpdateService = async (data, token) => {
+  try {
+    return await axios.post(`${URL}/api/update`, data, {
+      headers: { Authorization: `bearer ${token}` },
+    });
+  } catch (err) {
+    console.log("error calling addUpdateService", err);
+  }
+};
+
+export const getAllUpdatesService = async (token) => {
+  try {
+    return await axios.get(`${URL}/api/updates`, {
+      headers: { Authorization: `bearer ${token}` },
+    });
+  } catch (err) {
+    console.log("error calling getAllUpdatesService", err);
+  }
+};
+
+
+export const deleteUpdateService = async(token, id) => {
+  try { 
+    return await axios.delete(`${URL}/api/update/${id}`, {
+      headers: { Authorization: `bearer ${token}` },
+    });
+  }
+  catch (err){
+    console.log("error calling deleteUpdateService", err);
+  }
+
 }

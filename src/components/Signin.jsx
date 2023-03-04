@@ -29,8 +29,9 @@ const [usertoken, setUserToken] = useState('')
   // when button clicked it calls addUserService of backend api
   const submitFunction = async (event) => {
     event.preventDefault();
+    setMsg('Please wait... Signing in')
     const response = await signInService(userData);
-  
+    
     if(response &&  response.data.token) {
       localStorage.setItem("jwtToken",response.data.token)
       setMsg('User login success')

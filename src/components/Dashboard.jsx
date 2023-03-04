@@ -1,18 +1,16 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import Products from "./Products";
 import { useNavigate, NavLink } from "react-router-dom";
 
-const Dashboard =  () => {
+const Dashboard = () => {
   const history = useNavigate();
-  // retrieving jwt token from localstorage 
+  // retrieving jwt token from localstorage
   const jwt = localStorage.getItem("jwtToken");
 
-  // this function will remove jwttoken stored in localstorage 
-  const logoutFunction =  () => {
+  // this function will remove jwttoken stored in localstorage
+  const logoutFunction = () => {
     localStorage.removeItem("jwtToken", "");
-    history('/dashboard')
-
-    
+    history("/dashboard");
   };
 
   // useEffect( () => {
@@ -20,30 +18,44 @@ const Dashboard =  () => {
   // }
   // ,[])
 
-
-
-  
-
-  
-
   return (
-    <div className="h-full bg-black text-white item-end">
-{jwt ? <button
-        className="bg-black py-2  px-6 border border-blue-500 text-white"
-        onClick={() => {
-          logoutFunction();
-        }}
-      >
-        logout
-      </button> : ""}
-        {/* logout button  */}
-      
+    <>
+    <div className="flex justify-end">
 
-        {/* signed in user check ,  if logged in then products are displayed  */}
-      <div>
-      {jwt ? <Products /> : <div>User not logged in Sign in <NavLink className="underline" to='/signin'>here</NavLink></div>}
-        </div>
+      <div className="text-white">
+      
+      {jwt ? (
+        <button
+          className="bg-black align-items flex-end py-2  px-6 border border-blue-500 text-white"
+          onClick={() => {
+            logoutFunction();
+          }}
+        >
+          logout
+        </button>
+      ) : (
+        ""
+      )}
+      </div>
+
     </div>
+    <div className="h-full bg-black flex justify-center text-white">
+
+      {/* signed in user check ,  if logged in then products are displayed  */}
+      <div>
+        {jwt ? (
+          <Products />
+        ) : (
+          <div  className="mx-auto">
+            User not logged in Sign in{" "}
+            <NavLink className="underline" to="/signin">
+              here
+            </NavLink>
+          </div>
+        )}
+      </div>
+    </div>
+    </>
   );
 };
 
