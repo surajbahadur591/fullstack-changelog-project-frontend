@@ -9,10 +9,16 @@ const Navbar = () => {
           <a href="/">Changelog App</a>{" "}
         </h1>
         <ul className="flex px-8">
-          <Link target="_blank" to="https://github.com/surajbahadur591/fullstack-changelog-project-frontend">
+          <Link
+            target="_blank"
+            to="https://github.com/surajbahadur591/fullstack-changelog-project-frontend"
+          >
             <li className="px-8">Github</li>
           </Link>
-          <Link target="_blank" to="https://github.com/surajbahadur591/fullstack-changelog-project-backend">
+          <Link
+            target="_blank"
+            to="https://github.com/surajbahadur591/fullstack-changelog-project-backend"
+          >
             {" "}
             <li className="px-8">Documentation</li>
           </Link>

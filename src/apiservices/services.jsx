@@ -27,17 +27,6 @@ export const signInService = async (data) => {
   }
 };
 
-// function to get all product data of  signed in user, bearer token is required and it is set in headers
-export const allProductsService = async (token) => {
-  try {
-    return await axios.get(`${URL}/api/products`, {
-      headers: { Authorization: `bearer ${token}` },
-    });
-  } catch (err) {
-    console.log("error calling allProductsService", err);
-  }
-};
-
 // function to  create a product, this function  required data of product and a token
 export const createProductService = async (data, token) => {
   try {
@@ -49,18 +38,26 @@ export const createProductService = async (data, token) => {
   }
 };
 
-export const deleteProductService = async(id, token) => {
-  
-    try {
-      return await axios.delete(`${URL}/api/product/${id}`, {
-        headers: { Authorization: `bearer ${token}` },
-      });
+// function to get all product data of  signed in user, bearer token is required and it is set in headers
+export const allProductsService = async (token) => {
+  try {
+    return await axios.get(`${URL}/api/products`, {
+      headers: { Authorization: `bearer ${token}` },
+    });
+  } catch (err) {
+    console.log("error calling allProductsService", err);
   }
-  catch(err){
+};
+
+export const deleteProductService = async (id, token) => {
+  try {
+    return await axios.delete(`${URL}/api/product/${id}`, {
+      headers: { Authorization: `bearer ${token}` },
+    });
+  } catch (err) {
     console.log("error calling deleteProductService", err);
   }
-}
-
+};
 
 export const addUpdateService = async (data, token) => {
   try {
@@ -82,15 +79,12 @@ export const getAllUpdatesService = async (token) => {
   }
 };
 
-
-export const deleteUpdateService = async(token, id) => {
-  try { 
+export const deleteUpdateService = async (token, id) => {
+  try {
     return await axios.delete(`${URL}/api/update/${id}`, {
       headers: { Authorization: `bearer ${token}` },
     });
-  }
-  catch (err){
+  } catch (err) {
     console.log("error calling deleteUpdateService", err);
   }
-
-}
+};

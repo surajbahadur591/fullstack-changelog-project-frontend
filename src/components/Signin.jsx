@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { signInService } from "../apiservices/services";
-import AccessImage from '../asset/authentication.svg'
+import AccessImage from "../asset/authentication.svg";
 
 const Signin = () => {
-
   const history = useNavigate();
 
   //default userdate with empty value
@@ -13,13 +12,11 @@ const Signin = () => {
     password: "",
   };
 
-  const [msg, setMsg] = useState('')
+  const [msg, setMsg] = useState("");
 
   // user state
   const [userData, setUserData] = useState(defaultUser);
 
-  // user token 
-const [usertoken, setUserToken] = useState('')
   //  function used to set the value of form to userData
   const changeHandler = (e) => {
     // console.log(e.target.value);
@@ -29,25 +26,23 @@ const [usertoken, setUserToken] = useState('')
   // when button clicked it calls addUserService of backend api
   const submitFunction = async (event) => {
     event.preventDefault();
-    setMsg('Please wait... Signing in')
+    setMsg("Please wait... Signing in");
     const response = await signInService(userData);
-    
-    if(response &&  response.data.token) {
-      localStorage.setItem("jwtToken",response.data.token)
-      setMsg('User login success')
-      history("/dashboard")
+
+    if (response && response.data.token) {
+      localStorage.setItem("jwtToken", response.data.token);
+      setMsg("User login success");
+      history("/dashboard");
+    } else {
+      setMsg("No user exists");
     }
-    else {
-      setMsg('No user exists')
-    }
-    
+
     // setUserToken(response.data.token);
-    
   };
 
   return (
     <>
-    {/* <Navbar/> */}
+      {/* <Navbar/> */}
       {/* flex for two element , for side by side look */}
       <div className="md:flex bg-[#060B27] h-full">
         {/* element 1 : image  */}
@@ -87,9 +82,10 @@ const [usertoken, setUserToken] = useState('')
               Sign in
             </button>
             <h1 className="text-white text-lg ">
-              Don't have an account? {" "}
-              <NavLink className="underline" to='/'>Sign up</NavLink>
-          
+              Don't have an account?{" "}
+              <NavLink className="underline" to="/">
+                Sign up
+              </NavLink>
             </h1>
           </form>
           <div className="text-white font-semibold">{msg}</div>
