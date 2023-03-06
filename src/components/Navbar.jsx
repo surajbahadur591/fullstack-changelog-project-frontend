@@ -17,7 +17,7 @@ const Navbar = () => {
           </Link>
           <Link
             target="_blank"
-            to="https://github.com/surajbahadur591/fullstack-changelog-project-backend"
+            to="https://documenter.getpostman.com/view/13606111/2s93CPqCZj"
           >
             {" "}
             <li className="px-8">Documentation</li>

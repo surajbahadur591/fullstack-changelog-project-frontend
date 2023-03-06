@@ -13,11 +13,6 @@ const Dashboard = () => {
     history("/dashboard");
   };
 
-  // useEffect( () => {
-  //   logoutFunction()
-  // }
-  // ,[])
-
   return (
     <>
       <div className="flex w-full justify-end">
@@ -44,7 +39,7 @@ const Dashboard = () => {
           ) : (
             <div className="mx-auto">
               User not logged in Sign in{" "}
-              <NavLink className="underline" to="/signin">
+              <NavLink className="text-[#FF9641] underline" to="/signin">
                 here
               </NavLink>
             </div>
