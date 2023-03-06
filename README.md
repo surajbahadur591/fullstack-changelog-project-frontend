@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Full Stack App - Changelog App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Full Stack application created using React, Typescript, Tailwind CSS, MongoDB, Express and postgresql.
 
-## Available Scripts
+#### Feel free to have a look at App [here..]https://changelog-frontend.netlify.app/.
 
-In the project directory, you can run:
+## Landing Page:
+![landing-page](https://user-images.githubusercontent.com/36602276/223172906-887cdd93-4508-4d6d-953c-df23e54dc27e.png)
 
-### `npm start`
+## Sign in Page:
+![signin](https://user-images.githubusercontent.com/36602276/223173172-6999e563-c698-4c20-9d92-19cc185ca854.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dashboard Page:
+![dashboard](https://user-images.githubusercontent.com/36602276/223173284-b0c5dcc9-af32-476c-9289-f109b55e9d06.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Product Page:
+![Product](https://user-images.githubusercontent.com/36602276/223173707-d424d13b-aae9-4ccf-b8e5-e19679fb926a.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. [Functional overview](#functioal-overview) 
+### 2. [Technical overview](#technical-overview)
 
-### `npm run build`
+## Functional overview
+Here are the List of things which this app does...
+1. Sign up User.
+2. Sign in Users.
+3. Create Product.
+4. Delete Product.
+5. JWT Authentication
+6. Create Update.
+7. Delete Update
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technical overview
+  🔹 Technology Stack : React for rendering components, Tailwind CSS for resposive UI, Node and Express for server, Postgresql as Database and Netlify, Render for deployment
+  
+  🔹 Backend API - https://project-changelog-backend.onrender.com
