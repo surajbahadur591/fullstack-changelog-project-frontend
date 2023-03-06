@@ -91,18 +91,18 @@ const Products = () => {
         <div>
           <input
             onChange={(e) => changeHandler(e)}
-            className="w-full text-white bg-[#060B27] py-2 my-2 border-2 border-[#181D39] rounded-lg focus:border-indigo-800 focus:outline-none"
+            className=" w-200px  sm:w-[400px] md:w-full text-white bg-[#060B27] py-2 my-2 border-2 border-[#181D39] rounded-lg focus:border-indigo-800 focus:outline-none"
             type="text"
             name="name"
             placeholder="Product Name"
           />
-
+<br />
           {/* create product button calling api   */}
           <button
             onClick={() => {
               createProduct();
             }}
-            className="bg-black py-2 px-6 border border-blue-500 text-white"
+            className="bg-black py-2 px-4 border border-blue-500 text-white"
           >
             Create Product
           </button>
@@ -127,7 +127,7 @@ const Products = () => {
           productDetails.map((product) => (
             <div
               key={product.id}
-              className="bg-[#1B1B1B] my-[20px] px-6 py-6 h-500px] max-w-[800px] mx-auto rounded-lg"
+              className="bg-[#1B1B1B] my-[20px]  sm:px-2 sm:py-2  md:px-6 md:py-6 h-500px] md:max-w-[800px] mx-auto rounded-lg"
             >
               <div className="flex w-full justify-between">
                 <p className="mx-28 text-2xl font-semibold capitalize text-[#DE65E5]">
@@ -137,7 +137,7 @@ const Products = () => {
                   onClick={(e) => {
                     deleteProduct(e);
                   }}
-                  className="px-4 border mx-1"
+                  className="sm:px-1 px-4 border mx-1"
                   id={product.id}
                 >
                   {" "}
@@ -150,16 +150,16 @@ const Products = () => {
                 {dateFormat(product.createdAt, "mmmm dS, yyyy")}
               </p>
 
-              <div className="my-12 mx-28">
+              <div className="my-8 md:my-12 md:mx-28">
                 <h1 className="text-base font-semibold uppercase">Features</h1>
                 {updatedetails &&
                   updatedetails.map((feature) => {
                     return feature.productId === product.id ? (
                       <div className="flex justify-between" key={feature.id}>
-                        <h1 className="w-[300px]" key={feature.id}>
+                        <h1 className="w-[200px] text-base md:text-xl" key={feature.id}>
                           --- {feature.title}{" "}
                         </h1>
-                        <h1 className="text-[#FF9641]">
+                        <h1 className="text-[#FF9641] text-sm md:text-lg">
                           Status : {feature.status}
                         </h1>
                         <button

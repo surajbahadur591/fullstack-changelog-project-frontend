@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex justify-end">
+      <div className="flex w-full justify-end">
         <div className="text-white">
           {jwt ? (
             <button
@@ -36,7 +36,7 @@ const Dashboard = () => {
           )}
         </div>
       </div>
-      <div className="h-full bg-black flex justify-center text-white">
+      <div className="h-full bg-black text-white">
         {/* signed in user check ,  if logged in then products are displayed  */}
         <div>
           {jwt ? (
